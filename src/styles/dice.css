@@ -1,0 +1,19 @@
+.dice-container {
+    margin: 20px 0;
+  }
+  
+  .dice-button {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #03a9f4;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dice-button:hover {
+    background-color: #0288d1;
+  }
+  

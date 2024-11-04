@@ -1,0 +1,39 @@
+.progress-tracker {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+
+.box_style {
+  display: flex;                
+  align-items: center;         
+  justify-content: space-between;
+  border-radius: 2px;
+  border: 1px solid #E8DECF;
+  padding: 5px;               
+}
+
+.icon {
+  width: 24px;               
+  height: 24px;               
+  margin-right: 8px;          
+}
+
+.title {
+  flex: 1;                   
+  text-align: center;   
+  font-size: small;      
+}
+
+.parameter {
+  text-align: right;         
+  min-width: 50px;        
+}

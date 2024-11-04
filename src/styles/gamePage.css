@@ -1,0 +1,84 @@
+
+.global_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
+  margin-top: 30px;
+}
+
+.game_container,
+.Plaintext_Button,
+
+.dice_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  width: 80%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+
+.Container_Board {
+  width: 80%; 
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.Container_Board2 {
+  width: 80%; 
+  text-align: center;
+  padding: 10px;
+  background-color: #F5F0E5;
+  border-radius: 5px;
+}
+
+.Container_Progress {
+  width: 20%;
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #ffffff;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.Container_Code {
+  width: 20%;
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 5px;
+  border: 2px solid #72D07C;
+  font-size: 16px;
+}
+
+.Container_Key {
+  width: 20%;
+  text-align: center;
+  padding: 10px;
+  background-color: #72D07C;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none; 
+  font-size: 16px;
+}
+
+button.Container_Progress {
+  background-color: #72D07C;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+button.Container_Progress:hover {
+  background-color: #72D07C;
+}
