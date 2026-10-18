@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="app-container">
       {page === "auth" && <AuthPage navigateTo={navigateTo} />}
-      {page === "setup" && <GamePage navigateTo={navigateTo} />}
+      {page === "setup" && <SetupPage navigateTo={navigateTo} />}
       {page === "game" && <GamePage />}
     </div>
   );

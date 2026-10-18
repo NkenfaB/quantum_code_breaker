@@ -1,84 +1,212 @@
-
-.global_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #ffffff;
-  margin-top: 30px;
+* {
+  box-sizing: border-box;
 }
-
-.game_container,
-.Plaintext_Button,
-
-.dice_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; 
-  width: 80%;
-  max-width: 800px;
-  margin-bottom: 20px;
+body {
+  margin: 0;
+  background: #f4f4ed;
+  color: #172b26;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-
-
-.Container_Board {
-  width: 80%; 
-  text-align: center;
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 5px;
+button,
+input {
+  font: inherit;
 }
-
-.Container_Board2 {
-  width: 80%; 
-  text-align: center;
-  padding: 10px;
-  background-color: #F5F0E5;
-  border-radius: 5px;
-}
-
-.Container_Progress {
-  width: 20%;
-  text-align: center;
-  padding: 10px;
-  background-color: #ffffff;
-  color: #ffffff;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.Container_Code {
-  width: 20%;
-  text-align: center;
-  padding: 10px;
-  background-color: #ffffff;
-  color: #000000;
-  border-radius: 5px;
-  border: 2px solid #72D07C;
-  font-size: 16px;
-}
-
-.Container_Key {
-  width: 20%;
-  text-align: center;
-  padding: 10px;
-  background-color: #72D07C;
-  color: #ffffff;
-  border-radius: 5px;
-  border: none; 
-  font-size: 16px;
-}
-
-button.Container_Progress {
-  background-color: #72D07C;
-  color: #ffffff;
-  border: none;
+button {
   cursor: pointer;
 }
-
-button.Container_Progress:hover {
-  background-color: #72D07C;
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #c46228;
+  outline-offset: 4px;
+}
+.game-shell {
+  max-width: 1140px;
+  margin: auto;
+  padding: 40px 24px;
+  text-align: left;
+}
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #446b5a;
+}
+.game-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+}
+.vault,
+.game-panel {
+  padding: 32px;
+  border-radius: 22px;
+  background: white;
+  border: 1px solid #d8e1d7;
+}
+.vault {
+  background: #163c30;
+  color: #f0f7ed;
+}
+.vault .eyebrow {
+  color: #bce29e;
+}
+.vault p,
+details {
+  line-height: 1.7;
+}
+details {
+  margin-top: 25px;
+}
+summary {
+  cursor: pointer;
+}
+.binary-board {
+  margin-top: 32px;
+}
+.binary-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #3d5f4f;
+  padding: 16px 0;
+}
+.binary-row code {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  letter-spacing: 0.15em;
+}
+.byte-index {
+  color: #bce29e;
+  font-size: 0.75rem;
+}
+.game-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 0;
+}
+dt {
+  color: #52665b;
+  font-size: 0.8rem;
+}
+dd {
+  margin: 8px 0 0;
+  font-size: 1.75rem;
+  font-weight: 750;
+}
+.roll-button,
+.decode-button,
+.quiet-button {
+  border-radius: 10px;
+  border: 0;
+  padding: 14px 20px;
+  font-weight: 700;
+}
+.roll-button {
+  background: #b9e38e;
+  color: #153523;
+}
+.decode-button {
+  background: #173e30;
+  color: white;
+}
+.quiet-button {
+  background: #e0e7d9;
+  color: #173e30;
+}
+.game-panel form {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+.game-panel label {
+  font-weight: 600;
+}
+.game-panel input {
+  min-width: 0;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #9bab9c;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+.game-notice {
+  padding: 14px;
+  margin: 20px 0 0;
+  background: #f1f4ec;
+  border-radius: 10px;
+  line-height: 1.5;
+}
+.won {
+  color: #155c30;
+}
+.lost {
+  color: #923115;
+}
+.guess-history {
+  margin-top: 32px;
+}
+.guess-history ol {
+  padding: 0;
+  list-style: none;
+}
+.guess-history li {
+  display: flex;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid #cdd6c9;
+}
+.game-intro {
+  max-width: 700px;
+  padding: 15vh 24px 50px;
+  margin: auto;
+  text-align: left;
+}
+.game-intro h1 {
+  font-size: clamp(2.7rem, 7vw, 5.5rem);
+}
+.game-intro p,
+.game-intro li {
+  line-height: 1.8;
+}
+.game-intro button {
+  margin: 20px 0;
+}
+@media (max-width: 760px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+  .game-header {
+    align-items: flex-start;
+  }
+  .vault,
+  .game-panel {
+    padding: 24px;
+  }
 }
