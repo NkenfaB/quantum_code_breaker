@@ -1,12 +1,18 @@
-import React from 'react';
-
-const AuthPage = ({ navigateTo }) => {
+import React from "react";
+export default function AuthPage({ navigateTo }) {
   return (
-    <div className="auth-page">
-      <h2>Welcome to Quantum Code Breaker</h2>
-      <button onClick={() => navigateTo("setup")}>Login</button>
-    </div>
+    <main className="game-intro">
+      <p className="eyebrow">A SMALL GAME ABOUT BIG IDEAS</p>
+      <h1>
+        Quantum
+        <br />
+        Code Breaker
+      </h1>
+      <p>Read the bits. Manage your energy. Open the vault.</p>
+      <button className="roll-button" onClick={() => navigateTo("setup")}>
+        Play the challenge
+      </button>
+      <p>No account required.</p>
+    </main>
   );
-};
-
-export default AuthPage;
+}
